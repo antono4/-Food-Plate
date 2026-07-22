@@ -667,6 +667,294 @@
       width: 300px;
       height: 300px;
     }
+
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: linear-gradient(180deg, #1a4a42 0%, #143e37 100%);
+      border-radius: 24px;
+      padding: 24px;
+      width: 90%;
+      max-width: 320px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Search modal */
+    .search-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .search-input:focus {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .search-results {
+      margin-top: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .search-result-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .search-result-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .search-result-info h4 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .search-result-info p {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Profile modal */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 12px;
+    }
+
+    .profile-name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .profile-email {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .profile-stat {
+      text-align: center;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+    }
+
+    .profile-stat-value {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .profile-stat-label {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a4a42;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 200;
+      opacity: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Heart animation */
+    .heart-btn.active svg {
+      fill: #ff4757;
+      color: #ff4757;
+      animation: heartbeat 0.3s ease;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    /* Category card click effect */
+    .category-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .category-card:active {
+      transform: scale(0.95);
+    }
+
+    /* Recipe steps screen */
+    .screen-steps {
+      padding-top: 56px;
+    }
+
+    .screen-steps .screen-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .steps-list {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4ade80, #22c55e);
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
   </style>
 </head>
 <body>
@@ -684,13 +972,13 @@
       <div class="texture-overlay"></div>
       <div class="screen-content">
         <div class="top-nav">
-          <div class="nav-icon">
+          <div class="nav-icon" onclick="openProfile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
           </div>
-          <div class="nav-icon">
+          <div class="nav-icon" onclick="openSearch()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>
@@ -709,7 +997,7 @@
         <div class="categories-section">
           <div class="categories-title">Explore categories</div>
           <div class="categories-scroll hide-scrollbar">
-            <div class="category-card card-translucent">
+            <div class="category-card card-translucent" onclick="selectCategory('salads')">
               <div class="category-dot"></div>
               <div class="category-image">
                 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=400&h=400" alt="Salads">
@@ -717,7 +1005,7 @@
               <div class="category-name">Healthy<br>Salads</div>
               <div class="category-count">24 Recipes</div>
             </div>
-            <div class="category-card card-translucent">
+            <div class="category-card card-translucent" onclick="selectCategory('bowls')">
               <div class="category-dot"></div>
               <div class="category-image">
                 <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=400&h=400" alt="Bowls">
@@ -744,7 +1032,7 @@
             </svg>
           </div>
           <div class="nav-title">Sky Dishes</div>
-          <div class="nav-icon">
+          <div class="nav-icon heart-btn" id="heart-btn" onclick="toggleFavorite()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
             </svg>
@@ -792,14 +1080,14 @@
             <div class="author-label">Recipe creator</div>
             <div class="author-name">Maria Gonzales</div>
           </div>
-          <div class="btn-play">
+          <div class="btn-play" onclick="startCooking()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <polygon points="5 3 19 12 5 21 5 3"/>
             </svg>
           </div>
         </div>
 
-        <button class="btn-primary white" onclick="nextScreen()">Start Cooking</button>
+        <button class="btn-primary white" onclick="goToSteps()">Start Cooking</button>
       </div>
       <div class="home-indicator"></div>
     </div>
@@ -815,7 +1103,7 @@
             </svg>
           </div>
           <div class="nav-title">Recipes</div>
-          <div class="nav-icon">
+          <div class="nav-icon" onclick="openMenu()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
             </svg>
@@ -869,9 +1157,163 @@
           </div>
         </div>
 
-        <button class="btn-primary white" onclick="nextScreen()">View Steps</button>
+        <button class="btn-primary white" onclick="goToSteps()">View Steps</button>
       </div>
       <div class="home-indicator"></div>
+    </div>
+
+    <!-- Screen 4: Cooking Steps -->
+    <div class="screen screen-steps hidden" id="screen-steps">
+      <div class="texture-overlay"></div>
+      <div class="screen-content">
+        <div class="top-nav">
+          <div class="nav-icon" onclick="prevScreen()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </div>
+          <div class="nav-title">Steps</div>
+          <div class="nav-icon" onclick="openMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+
+        <h3 class="grid-title" style="text-align: left; margin-bottom: 16px;">Spicy Pasta Primavera</h3>
+        
+        <div class="steps-list">
+          <div class="step-item" onclick="markStepComplete(1)">
+            <div class="step-number" id="step-1">1</div>
+            <div class="step-content">
+              <h4>Prepare Ingredients</h4>
+              <p>Gather all ingredients: 400g spaghetti, 3 cups cherry tomatoes, 2 cloves garlic, fresh basil, olive oil, salt, and pepper.</p>
+            </div>
+          </div>
+          
+          <div class="step-item" onclick="markStepComplete(2)">
+            <div class="step-number" id="step-2">2</div>
+            <div class="step-content">
+              <h4>Cook the Pasta</h4>
+              <p>Bring a large pot of salted water to boil. Add spaghetti and cook according to package directions until al dente.</p>
+            </div>
+          </div>
+          
+          <div class="step-item" onclick="markStepComplete(3)">
+            <div class="step-number" id="step-3">3</div>
+            <div class="step-content">
+              <h4>Prepare the Sauce</h4>
+              <p>While pasta cooks, halve the cherry tomatoes. Sauté garlic in olive oil until fragrant, then add tomatoes.</p>
+            </div>
+          </div>
+          
+          <div class="step-item" onclick="markStepComplete(4)">
+            <div class="step-number" id="step-4">4</div>
+            <div class="step-content">
+              <h4>Combine and Serve</h4>
+              <p>Drain pasta and toss with the tomato sauce. Season with salt, pepper, and fresh basil. Serve immediately.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-primary white" onclick="resetSteps()" style="margin-top: auto;">Reset Steps</button>
+      </div>
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="search-modal" onclick="closeModal(event, 'search-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Search Recipes</h3>
+        <button class="modal-close" onclick="closeSearch()">&times;</button>
+      </div>
+      <input type="text" class="search-input" placeholder="Search for recipes..." id="search-input" oninput="searchRecipes()">
+      <div class="search-results" id="search-results">
+        <div class="search-result-item" onclick="goToDetail('salmon')">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=100&h=100" class="search-result-img" alt="Salmon">
+          <div class="search-result-info">
+            <h4>Raw Salmon Bowl</h4>
+            <p>Maria Gonzales • 4.8 ★</p>
+          </div>
+        </div>
+        <div class="search-result-item" onclick="goToDetail('pasta')">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=100&h=100" class="search-result-img" alt="Pasta">
+          <div class="search-result-info">
+            <h4>Spicy Pasta Primavera</h4>
+            <p>Chef Marco • 4.6 ★</p>
+          </div>
+        </div>
+        <div class="search-result-item" onclick="goToDetail('salad')">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=100&h=100" class="search-result-img" alt="Salad">
+          <div class="search-result-info">
+            <h4>Healthy Green Salad</h4>
+            <p>Sarah Chen • 4.9 ★</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Modal -->
+  <div class="modal-overlay" id="profile-modal" onclick="closeModal(event, 'profile-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Profile</h3>
+        <button class="modal-close" onclick="closeProfile()">&times;</button>
+      </div>
+      <div class="profile-header">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200" class="profile-avatar" alt="User">
+        <h4 class="profile-name">Maria Gonzales</h4>
+        <p class="profile-email">maria.gonzales@email.com</p>
+      </div>
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <div class="profile-stat-value">24</div>
+          <div class="profile-stat-label">Recipes</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-value">156</div>
+          <div class="profile-stat-label">Followers</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-value">89</div>
+          <div class="profile-stat-label">Following</div>
+        </div>
+      </div>
+      <button class="btn-primary white" onclick="closeProfile()">Edit Profile</button>
+    </div>
+  </div>
+
+  <!-- Menu Modal -->
+  <div class="modal-overlay" id="menu-modal" onclick="closeModal(event, 'menu-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Options</h3>
+        <button class="modal-close" onclick="closeMenu()">&times;</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="search-result-item" onclick="showToast('Share link copied!'); closeMenu();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+          <span style="margin-left: 12px;">Share Recipe</span>
+        </div>
+        <div class="search-result-item" onclick="showToast('Recipe saved!'); closeMenu();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span style="margin-left: 12px;">Save to Collection</span>
+        </div>
+        <div class="search-result-item" onclick="showToast('Recipe reported'); closeMenu();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+          <span style="margin-left: 12px;">Report Issue</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -879,9 +1321,12 @@
 
   <script>
     let currentScreen = 0;
-    const screens = ['screen-welcome', 'screen-detail', 'screen-grid'];
+    const screens = ['screen-welcome', 'screen-detail', 'screen-grid', 'screen-steps'];
     let isTransitioning = false;
+    let isFavorite = false;
+    let completedSteps = new Set();
 
+    // Navigation functions
     function nextScreen() {
       if (isTransitioning) return;
       isTransitioning = true;
@@ -891,7 +1336,7 @@
 
       setTimeout(() => {
         currentEl.classList.add('hidden');
-        currentScreen = (currentScreen + 1) % 3;
+        currentScreen = (currentScreen + 1) % screens.length;
         const nextEl = document.getElementById(screens[currentScreen]);
         nextEl.classList.remove('hidden');
         
@@ -922,7 +1367,215 @@
       }, 150);
     }
 
+    function goToSteps() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      resetSteps();
+
+      const currentEl = document.getElementById(screens[currentScreen]);
+      currentEl.style.opacity = '0';
+
+      setTimeout(() => {
+        currentEl.classList.add('hidden');
+        currentScreen = 3; // Go to steps screen
+        const nextEl = document.getElementById(screens[currentScreen]);
+        nextEl.classList.remove('hidden');
+        
+        setTimeout(() => {
+          nextEl.style.opacity = '1';
+          isTransitioning = false;
+        }, 10);
+      }, 150);
+    }
+
+    // Toast notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Modal functions
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      document.getElementById('search-input').focus();
+    }
+
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+      document.getElementById('search-input').value = '';
+    }
+
+    function openProfile() {
+      document.getElementById('profile-modal').classList.add('active');
+    }
+
+    function closeProfile() {
+      document.getElementById('profile-modal').classList.remove('active');
+    }
+
+    function openMenu() {
+      document.getElementById('menu-modal').classList.add('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('menu-modal').classList.remove('active');
+    }
+
+    function closeModal(event, modalId) {
+      if (event.target.classList.contains('modal-overlay')) {
+        document.getElementById(modalId).classList.remove('active');
+      }
+    }
+
+    // Favorite toggle
+    function toggleFavorite() {
+      isFavorite = !isFavorite;
+      const heartBtn = document.getElementById('heart-btn');
+      if (isFavorite) {
+        heartBtn.classList.add('active');
+        showToast('Added to favorites!');
+      } else {
+        heartBtn.classList.remove('active');
+        showToast('Removed from favorites');
+      }
+    }
+
+    // Category selection
+    function selectCategory(category) {
+      showToast(`Viewing ${category} recipes...`);
+    }
+
+    // Start cooking
+    function startCooking() {
+      showToast('Starting cooking tutorial...');
+      setTimeout(() => {
+        goToSteps();
+      }, 500);
+    }
+
+    // Search functionality
+    const allRecipes = [
+      { id: 'salmon', name: 'Raw Salmon Bowl', author: 'Maria Gonzales', rating: 4.8, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=100&h=100' },
+      { id: 'pasta', name: 'Spicy Pasta Primavera', author: 'Chef Marco', rating: 4.6, img: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=100&h=100' },
+      { id: 'salad', name: 'Healthy Green Salad', author: 'Sarah Chen', rating: 4.9, img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=100&h=100' },
+      { id: 'bowl', name: 'Nourish Bowl', author: 'Chef Anna', rating: 4.7, img: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=100&h=100' }
+    ];
+
+    function searchRecipes() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+      
+      if (query.length === 0) {
+        resultsContainer.innerHTML = allRecipes.map(recipe => `
+          <div class="search-result-item" onclick="goToDetail('${recipe.id}')">
+            <img src="${recipe.img}" class="search-result-img" alt="${recipe.name}">
+            <div class="search-result-info">
+              <h4>${recipe.name}</h4>
+              <p>${recipe.author} • ${recipe.rating} ★</p>
+            </div>
+          </div>
+        `).join('');
+        return;
+      }
+
+      const filtered = allRecipes.filter(r => 
+        r.name.toLowerCase().includes(query) || 
+        r.author.toLowerCase().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.5); padding: 20px;">No recipes found</p>';
+      } else {
+        resultsContainer.innerHTML = filtered.map(recipe => `
+          <div class="search-result-item" onclick="goToDetail('${recipe.id}')">
+            <img src="${recipe.img}" class="search-result-img" alt="${recipe.name}">
+            <div class="search-result-info">
+              <h4>${recipe.name}</h4>
+              <p>${recipe.author} • ${recipe.rating} ★</p>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function goToDetail(recipeId) {
+      closeSearch();
+      showToast('Opening recipe...');
+      
+      if (currentScreen !== 1) {
+        setTimeout(() => {
+          if (isTransitioning) return;
+          isTransitioning = true;
+
+          const currentEl = document.getElementById(screens[currentScreen]);
+          currentEl.style.opacity = '0';
+
+          setTimeout(() => {
+            currentEl.classList.add('hidden');
+            currentScreen = 1;
+            const nextEl = document.getElementById(screens[currentScreen]);
+            nextEl.classList.remove('hidden');
+            
+            setTimeout(() => {
+              nextEl.style.opacity = '1';
+              isTransitioning = false;
+            }, 10);
+          }, 150);
+        }, 300);
+      }
+    }
+
+    // Step completion
+    function markStepComplete(stepNum) {
+      const stepEl = document.getElementById(`step-${stepNum}`);
+      
+      if (completedSteps.has(stepNum)) {
+        completedSteps.delete(stepNum);
+        stepEl.style.background = 'rgba(255, 255, 255, 0.15)';
+        stepEl.style.color = 'white';
+        stepEl.innerHTML = stepNum;
+      } else {
+        completedSteps.add(stepNum);
+        stepEl.style.background = '#4ade80';
+        stepEl.style.color = '#1a4a42';
+        stepEl.innerHTML = '✓';
+      }
+      
+      updateProgress();
+      
+      if (completedSteps.size === 4) {
+        setTimeout(() => {
+          showToast('Congratulations! Recipe complete! 🎉');
+        }, 300);
+      }
+    }
+
+    function updateProgress() {
+      const progress = (completedSteps.size / 4) * 100;
+      document.getElementById('progress-fill').style.width = `${progress}%`;
+    }
+
+    function resetSteps() {
+      completedSteps.clear();
+      for (let i = 1; i <= 4; i++) {
+        const stepEl = document.getElementById(`step-${i}`);
+        stepEl.style.background = 'rgba(255, 255, 255, 0.15)';
+        stepEl.style.color = 'white';
+        stepEl.innerHTML = i;
+      }
+      updateProgress();
+    }
+
+    // Initialize
     document.getElementById(screens[0]).style.opacity = '1';
+    
+    // Initialize search results
+    searchRecipes();
   </script>
 </body>
 </html>
