@@ -61,6 +61,15 @@ sky-dishes/
 └── README.md
 ```
 
+## Deploy to GitHub Pages
+
+The app is automatically deployed to: **https://antono4.github.io/-Food-Plate/**
+
+To enable manual deployment:
+1. Go to repository **Settings** → **Pages**
+2. Select **GitHub Actions** as the source
+3. The site will deploy automatically on each push to `master`
+
 ## License
 
 MIT © antono4
