@@ -1,2 +1,26 @@
-Last updated: 2026-08-13 19:26:12 WIB
-Last updated: 2026-08-13 19:37:10 WIB
+# -Food-Plate
+
+
+
+## 📋 Overview
+
+This repository contains **8 files** and is built with the following technologies:
+
+HTML
+
+## 🚀 Quick Start
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+HTML
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-08-13 20:15:05 WIB*
