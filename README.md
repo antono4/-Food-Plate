@@ -10,8 +10,8 @@
 <p align="center">
   <a href="https://github.com/antono4/-Food-Plate"><img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-antono4/-Food-Plate-blue?logo=github"></a>
   <a href="https://antono4.github.io/-Food-Plate/"><img alt="Live Demo" src="https://img.shields.io/badge/Live%20Demo-Online-success?logo=githubpages"></a>
-  <img alt="Files" src="https://img.shields.io/badge/Files-6-informational">
-  <img alt="Updated" src="https://img.shields.io/badge/Updated-2026-09-29 04:55:52 WIB-lightgrey">
+  <img alt="Files" src="https://img.shields.io/badge/Files-9-informational">
+  <img alt="Updated" src="https://img.shields.io/badge/Updated-2026-09-29 10:17:31 WIB-lightgrey">
 </p>
 
 ---
@@ -35,7 +35,7 @@ Berdasarkan isi repository, proyek ini menggunakan:
 
 - `HTML`
 
-> Total **6 file** terdeteksi di repository.
+> Total **9 file** terdeteksi di repository.
 
 ## 🚀 Menjalankan Secara Lokal
 
@@ -61,4 +61,4 @@ Lihat berkas [`LICENSE`](./LICENSE) untuk informasi lisensi.
 
 ---
 
-<sub>README ini di-generate otomatis pada **2026-09-29 04:55:52 WIB** oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
+<sub>README ini di-generate otomatis pada **2026-09-29 10:17:31 WIB** oleh GitHub Actions `.github/workflows/generate-readme.yml`.</sub>
